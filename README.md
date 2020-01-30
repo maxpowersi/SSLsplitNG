@@ -7,4 +7,4 @@ I recommend using git, or downloading the tarball, to preserve file permissions
 
 
 ## About this version
-This is a forked from adde88/SSLsplitNG, thank adde88. I fix the dependencies. 
+This is a forked from adde88/SSLsplitNG, thank adde88. The dependencies installation were fixed.
