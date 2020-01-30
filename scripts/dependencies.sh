@@ -1,6 +1,7 @@
 #!/bin/sh
 # 2015 - Original: Whistle Master
 # 2019 - Modified by: Andreas Nilsen <adde88@gmail.com>
+# 2020 - Fixed by Maxpowersi
 
 [[ -f /tmp/SSLsplitNG.progress ]] && {
   exit 0
@@ -8,13 +9,9 @@
 
 touch /tmp/SSLsplitNG.progress
 
-mkdir -p /tmp/SSLsplitNG
-wget https://github.com/adde88/openwrt-useful-tools/tree/packages-19.07 -P /tmp/SSLsplitNG
-SSLSPLIT=`grep -F "sslsplit_" /tmp/SSLsplitNG/packages-19.07 | awk {'print $5'} | awk -F'"' {'print $2'} | grep mips_24kc`
+SSLSPLIT="sslsplit_0.5.5-1_mips_24kc.ipk"
 
-cd /tmp
 opkg update
-wget "https://github.com/adde88/openwrt-useful-tools/raw/packages-19.07/"$SSLSPLIT""
 
 if [ "$1" = "install" ]; then
   if [ "$2" = "internal" ]; then
